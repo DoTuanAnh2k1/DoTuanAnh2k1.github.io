@@ -1,3 +1,75 @@
+// Education data for modal
+const educationData = {
+    'hust': {
+        title: 'Hanoi University of Science and Technology',
+        subtitle: 'School of Electronics and Electrical Engineering',
+        image: 'images/hust-university.jpg',
+        description: 'Vietnam\'s leading technical university ("https://www.hust.edu.vn"), renowned for engineering excellence and innovation. HUST has been at the forefront of technological advancement in Southeast Asia, producing top-tier engineers and researchers.',
+        details: [
+            'Founded in 1956, HUST is Vietnam\'s premier technical institution',
+            'School of Electronics and Electrical Engineering - one of the most prestigious faculties',
+            'Strong focus on practical engineering skills and theoretical foundations',
+            'Alumni network includes industry leaders and technology innovators',
+            'Research-oriented curriculum with emphasis on emerging technologies',
+            'International partnerships with leading universities worldwide'
+        ]
+    },
+    'ai-research': {
+        title: 'AI Research Publications',
+        subtitle: 'Scientific Research in Artificial Intelligence',
+        image: 'images/ai-research.jpg',
+        description: 'Contributing to the advancement of artificial intelligence through rigorous research and academic publications. Focused on practical applications and theoretical foundations of modern AI systems.',
+        details: [
+            '2 published scientific research papers in AI field',
+            'Research focus on machine learning algorithms and applications',
+            'Peer-reviewed publications in academic journals',
+            'Collaboration with research institutions and industry partners',
+            'Contributing to open-source AI projects and community',
+            'Bridging the gap between theoretical research and practical implementation'
+        ]
+    }
+};
+
+// Education modal functions
+function openEducationModal(educationId) {
+    const modal = document.getElementById('educationModal');
+    const education = educationData[educationId];
+    
+    if (!education) {
+        console.error('Education not found:', educationId);
+        return;
+    }
+    
+    // Populate modal content
+    document.getElementById('educationModalTitle').textContent = education.title;
+    document.getElementById('educationModalSubtitle').textContent = education.subtitle;
+    document.getElementById('educationModalDescription').textContent = education.description;
+    document.getElementById('educationModalImage').src = education.image;
+    document.getElementById('educationModalImage').alt = education.title;
+    
+    // Education details
+    const detailsContainer = document.getElementById('educationModalDetails');
+    detailsContainer.innerHTML = `
+        <h3>Key Highlights</h3>
+        <ul>
+            ${education.details.map(detail => `<li>${detail}</li>`).join('')}
+        </ul>
+    `;
+    
+    // Show modal
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    
+    console.log('Education modal opened for:', educationId);
+}
+
+function closeEducationModal() {
+    const modal = document.getElementById('educationModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+    console.log('Education modal closed');
+}
+
 // Project data for modal
 const projectData = {
     'ssh-cli': {
@@ -110,9 +182,14 @@ function closeProjectModal() {
 
 // Close modal when clicking outside
 window.onclick = function(event) {
-    const modal = document.getElementById('projectModal');
-    if (event.target === modal) {
+    const projectModal = document.getElementById('projectModal');
+    const educationModal = document.getElementById('educationModal');
+    
+    if (event.target === projectModal) {
         closeProjectModal();
+    }
+    if (event.target === educationModal) {
+        closeEducationModal();
     }
 }
 
@@ -120,6 +197,7 @@ window.onclick = function(event) {
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeProjectModal();
+        closeEducationModal();
     }
 });
 

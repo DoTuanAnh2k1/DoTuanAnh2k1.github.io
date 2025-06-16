@@ -152,12 +152,183 @@ body {
     color: #e1e5e9;
 }
 
-/* Tech Stack */
-.tech-grid {
+/* Education & Research Section */
+.education-section {
+    margin-top: 4rem;
+}
+
+.education-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+}
+
+.education-item {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border: 2px solid rgba(0, 217, 255, 0.3);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.education-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0, 217, 255, 0.3);
+    border-color: #00d9ff;
+}
+
+.education-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.education-item:hover::before {
+    left: 100%;
+}
+
+.education-image {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #00d9ff;
+    position: relative;
+}
+
+.education-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.education-item:hover .education-image img {
+    transform: scale(1.1);
+}
+
+.education-icon {
+    font-size: 2.5rem;
+    color: #00d9ff;
+    margin-bottom: 1rem;
+}
+
+.education-item h4 {
+    font-size: 1.3rem;
+    color: #e1e5e9;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.school-name {
+    color: #00d9ff !important;
+    font-weight: 600;
+    margin-bottom: 0.5rem !important;
+}
+
+.university-desc, .research-desc {
+    color: #a0aec0;
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+}
+
+.research-note {
+    color: #a0aec0;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.education-badge {
+    background: linear-gradient(135deg, #00d9ff, #0099cc);
+    color: #0f1419;
+    padding: 0.4rem 1rem;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.programming-languages {
+    margin-bottom: 3rem;
+}
+
+.programming-languages h3 {
+    text-align: center;
+    color: #00d9ff;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.language-item {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border: 2px solid rgba(0, 217, 255, 0.3);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.language-item:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(0, 217, 255, 0.4);
+    border-color: #00d9ff;
+}
+
+.language-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #00d9ff;
+    display: block;
+}
+
+.language-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #e1e5e9;
+}
+
+.language-level {
+    font-size: 1rem;
+    color: #00d9ff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.expertise-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: linear-gradient(135deg, #00d9ff, #0099cc);
+    color: #0f1419;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    transform: rotate(15deg);
 }
 
 .tech-item {
@@ -315,8 +486,8 @@ body {
     padding: 0;
     border: 2px solid #00d9ff;
     border-radius: 20px;
-    width: 90%;
-    max-width: 1000px;
+    width: 95%;
+    max-width: 1200px;
     max-height: 90vh;
     overflow: auto;
     position: relative;
@@ -345,17 +516,25 @@ body {
     z-index: 2001;
     cursor: pointer;
     transition: color 0.3s ease;
+    background: rgba(0, 0, 0, 0.7);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .close:hover {
     color: #33e0ff;
+    background: rgba(0, 0, 0, 0.9);
 }
 
 .modal-body {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 60% 40%;
     gap: 0;
-    min-height: 500px;
+    min-height: 600px;
 }
 
 .modal-image {
@@ -364,13 +543,15 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 20px 0 0 20px;
+    padding: 1rem;
 }
 
 .modal-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 20px 0 0 20px;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .modal-info {

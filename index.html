@@ -50,15 +50,33 @@
         <!-- Skills Section -->
         <section id="skills" class="section">
             <div class="container">
-                <h2 class="section-title fade-in">Tech Stack & Skills</h2>
-                <div class="tech-grid">
-                    <div class="tech-item fade-in">
-                        <div class="tech-icon">
-                            <i class="fab fa-golang"></i>
+                <h2 class="section-title fade-in">Skills & Expertise</h2>
+                
+                <!-- Programming Languages -->
+                <div class="programming-languages fade-in">
+                    <h3>Programming Languages</h3>
+                    <div class="languages-grid">
+                        <div class="language-item">
+                            <div class="expertise-badge">Expert</div>
+                            <i class="fab fa-golang language-icon"></i>
+                            <div class="language-name">Go</div>
+                            <div class="language-level">Most Proficient</div>
                         </div>
-                        <div class="tech-name">Go</div>
-                        <div class="tech-level">Advanced</div>
+                        <div class="language-item">
+                            <i class="fab fa-java language-icon"></i>
+                            <div class="language-name">Java</div>
+                            <div class="language-level">Proficient</div>
+                        </div>
+                        <div class="language-item">
+                            <i class="fab fa-python language-icon"></i>
+                            <div class="language-name">Python</div>
+                            <div class="language-level">Proficient</div>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Other Technologies -->
+                <div class="tech-grid" style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; margin-top: 2rem;">
                     <div class="tech-item fade-in">
                         <div class="tech-icon">
                             <i class="fab fa-docker"></i>
@@ -93,6 +111,13 @@
                         </div>
                         <div class="tech-name">Aerospike</div>
                         <div class="tech-level">Intermediate</div>
+                    </div>
+                    <div class="tech-item fade-in">
+                        <div class="tech-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="tech-name">AI Research</div>
+                        <div class="tech-level">Advanced</div>
                     </div>
                 </div>
             </div>
@@ -232,15 +257,54 @@
             <div class="container">
                 <h2 class="section-title fade-in">About Me</h2>
                 <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #666; margin-bottom: 2rem;" class="fade-in">
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #a0aec0; margin-bottom: 2rem;" class="fade-in">
                         Passionate Go developer with a strong focus on building scalable, maintainable backend systems. 
                         Experienced in microservices architecture, containerization with Docker & Kubernetes, 
                         and various database technologies.
                     </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: #666;" class="fade-in">
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #a0aec0; margin-bottom: 3rem;" class="fade-in">
                         Always eager to learn new technologies and solve complex problems. 
                         Love challenging myself with projects that require innovation and performance optimization.
                     </p>
+                </div>
+
+                <!-- Education & Research -->
+                <div class="education-section fade-in">
+                    <h3 style="text-align: center; color: #00d9ff; font-size: 2rem; margin-bottom: 2rem;">Education & Research</h3>
+                    <div class="education-grid">
+                        <div class="education-item" onclick="openEducationModal('hust')">
+                            <div class="education-image">
+                                <img src="images/hust-university.jpg" alt="Hanoi University of Science and Technology" loading="lazy">
+                                <div class="education-overlay">
+                                    <i class="fas fa-expand-alt"></i>
+                                    <span>View Details</span>
+                                </div>
+                            </div>
+                            <div class="education-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>Hanoi University of Science and Technology</h4>
+                            <p class="school-name">School of Electronics and Electrical Engineering</p>
+                            <p class="university-desc">Vietnam's leading technical university</p>
+                            <span class="education-badge">HUST Graduate</span>
+                        </div>
+                        <div class="education-item" onclick="openEducationModal('ai-research')">
+                            <div class="education-image">
+                                <img src="images/ai-research.jpg" alt="AI Research Publications" loading="lazy">
+                                <div class="education-overlay">
+                                    <i class="fas fa-expand-alt"></i>
+                                    <span>View Details</span>
+                                </div>
+                            </div>
+                            <div class="education-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>AI Research Publications</h4>
+                            <p class="research-desc">2 Scientific Research Papers in Artificial Intelligence</p>
+                            <p class="research-note">Contributing to advancement in AI technology</p>
+                            <span class="education-badge">Published Researcher</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -296,6 +360,24 @@
                     <p id="modalDescription"></p>
                     <div id="modalTechStack" class="modal-tech"></div>
                     <div id="modalFeatures" class="modal-features"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education Modal -->
+    <div id="educationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEducationModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="educationModalImage" src="" alt="Education Image">
+                </div>
+                <div class="modal-info">
+                    <h2 id="educationModalTitle"></h2>
+                    <p id="educationModalSubtitle"></p>
+                    <p id="educationModalDescription"></p>
+                    <div id="educationModalDetails" class="education-modal-details"></div>
                 </div>
             </div>
         </div>
