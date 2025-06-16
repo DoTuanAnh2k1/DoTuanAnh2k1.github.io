@@ -4,7 +4,7 @@ const educationData = {
         title: 'Hanoi University of Science and Technology',
         subtitle: 'School of Electronics and Electrical Engineering',
         image: 'images/hust-university.jpg',
-        description: 'Vietnam\'s leading technical university ("https://www.hust.edu.vn"), renowned for engineering excellence and innovation. HUST has been at the forefront of technological advancement in Southeast Asia, producing top-tier engineers and researchers.',
+        description: 'Vietnam\'s leading technical university, renowned for engineering excellence and innovation. HUST has been at the forefront of technological advancement in Southeast Asia, producing top-tier engineers and researchers.',
         details: [
             'Founded in 1956, HUST is Vietnam\'s premier technical institution',
             'School of Electronics and Electrical Engineering - one of the most prestigious faculties',
@@ -26,6 +26,20 @@ const educationData = {
             'Collaboration with research institutions and industry partners',
             'Contributing to open-source AI projects and community',
             'Bridging the gap between theoretical research and practical implementation'
+        ]
+    },
+    'viettel-work': {
+        title: 'Viettel High Technology',
+        subtitle: 'Software Developer',
+        image: 'images/viettel-work.jpg',
+        description: 'Currently working as a Software Developer at Viettel High Technology (https://viettelhightech.vn/), a subsidiary of Viettel Group - Vietnam\'s largest telecommunications and technology corporation. Contributing to cutting-edge technology solutions while maintaining high security standards.',
+        details: [
+            'Part of Viettel Group - Vietnam\'s leading telecommunications corporation',
+            'Working on enterprise-level software solutions',
+            'Developing scalable applications using modern technologies',
+            'Collaborating with cross-functional teams in agile environment',
+            'Contributing to high-security, mission-critical systems',
+            'Continuous learning and adaptation to emerging technologies'
         ]
     }
 };
