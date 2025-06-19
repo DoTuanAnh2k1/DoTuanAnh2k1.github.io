@@ -101,6 +101,20 @@ const projectData = {
             'Multi-user session support'
         ]
     },
+    'http-gateway': {
+        title: 'HTTP Gateway',
+        subtitle: 'Interactive System Management Interface',
+        image: 'images/http-gateway.png',
+        description: 'A production-grade bidirectional gateway handling high-traffic routing with military-level optimization. Built for enterprise systems requiring session consistency and performance. Impact: Handles thousands of concurrent requests with sub-millisecond routing decisions. Reduced deployment size by 95% (500MB → 15MB) and enabled seamless service-to-service communication.',
+        techStack: ['Go', 'HTTP', 'Gateway', 'System Admin', ],
+        features: [
+            'Dual-direction routing: Ingress + Egress traffic management',
+            'IP-based sticky sessions: Consistent client-to-backend mapping',
+            'Request tracing: End-to-end tracking with unique IDs',
+            'Header-based routing: Dynamic external service targeting',
+            'Performance optimized: Multi-stage Docker builds, connection pooling',
+        ]
+    },
     'stock-predictor': {
         title: 'VN Stock Predictor',
         subtitle: 'Machine Learning Stock Analysis Platform',
